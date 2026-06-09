@@ -8,7 +8,7 @@ client = genai.Client(api_key=os.environ.get("GEMINI_API_KEY"))
 @app.route("/chat", methods=["POST"])
 def chat():
     # Security check
-    if request.headers.get("alessa_nexusai") != os.environ.get("APP_SECRET_PASSWORD"):
+    if request.headers.get("x-api-key") != os.environ.get("APP_SECRET_PASSWORD"):
         return jsonify({"error": "Unauthorized"}), 403
 
     data = request.json
