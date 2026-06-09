@@ -1,6 +1,3 @@
-    # Add this in server.py
-    print(f"DEBUG: I see header 'x-api-key' as: {request.headers.get('x-api-key')}")
-
 import os
 from flask import Flask, request, jsonify
 from google import genai
